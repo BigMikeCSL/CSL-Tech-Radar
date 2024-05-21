@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSL BE Tech Radar</title>
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="http://zalando.github.io/tech-radar/release/radar-0.8.js"></script>
+</head>
+
+<body>
+
+
+<svg id="radar"></svg>
+
+<script type="text/javascript">
+  const infrastructureQuadrant = 0;
+  const dataStoresQuadrant = 1;
+  const frameworksAndLibrariesQuadrant = 2;
+  const toolsQuadrant = 3;
+
+  const adoptRing = 0;
+  const trialRing = 1;
+  const assessRing = 2;
+  const holdRing = 3;
+
+  const movedOut = -1;
+  const notMoved = 0;
+  const movedIn = 1;
+
+  radar_visualization({
+  svg_id: "radar",
+  width: 1450,
+  height: 1000,
+  scale: 1.0,
+  colors: {
+    background: "#fff",
+    grid: "#bbb",
+    inactive: "#ddd"
+  },
+  title: "CSL BE Tech Radar",
+  date: "2024.05",
+  quadrants: [
+    { name: "Infrastructure" },
+    { name: "Data Stores" },
+    { name: "Libraries & Frameworks" },
+    { name: "Tools" }
+  ],
+  rings: [
+    { name: "ADOPT",  color: "#5ba300" },
+    { name: "TRIAL", color: "#009eb0" },
+    { name: "ASSESS",  color: "#c7ba00" },
+    { name: "HOLD",  color: "#e09b96" }
+  ],
+  print_layout: true,
+  links_in_new_tabs: true,
+  entries: [
+
+    {
+        label: "ASP.NET Core",
+        quadrant: 2,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/c3868961d3fa4a47b471c1f36722c76b"
+    },
+    
+    {
+        label: "EF Core",
+        quadrant: 2,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/326373dfc6374dbeb7c8edcac5aef704"
+    },
+    
+    {
+        label: "FluentAssertions",
+        quadrant: 2,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/46347aa529164c6eaaf3ae1b54b9d89f"
+    },
+    
+    {
+        label: "FluentValidation",
+        quadrant: 2,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/ab96a86ac7f6455c911018626741f0c6"
+    },
+    
+    {
+        label: "WebApplicationFactory",
+        quadrant: 2,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/54080a26f5d34b87bb7b950564d13f61"
+    },
+    
+    {
+        label: "xUnit",
+        quadrant: 2,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/afcfe0cb57124b73b3d4a4f848a1df84"
+    },
+    
+    {
+        label: "BuilderGenerator",
+        quadrant: 2,
+        ring: 1,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/8bab2b658b5743d493e6158be6382a70"
+    },
+    
+    {
+        label: "Semantic Kernel",
+        quadrant: 2,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/423e4e14acaf4944833fd24184690815"
+    },
+    
+    {
+        label: "Moq",
+        quadrant: 2,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/1448c1fb40e143119a4eb081c0445744"
+    },
+    
+    {
+        label: "MediatR",
+        quadrant: 2,
+        ring: 1,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/344effd7f2a44e48bf57a828a9b5400d"
+    },
+    
+    {
+        label: "CoreWCF",
+        quadrant: 2,
+        ring: 1,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/95f46b9130744e41b5f772b3b9d94358"
+    },
+    
+    {
+        label: "SoapCore",
+        quadrant: 2,
+        ring: 3,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/a5bec6182f19482383e6d261c6f2beee"
+    },
+    
+    {
+        label: "Quartz Scheduler",
+        quadrant: 2,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/d1e0aba785c3462bbb32e9844a9a5435"
+    },
+    
+    {
+        label: "Rate Limiting Middleware",
+        quadrant: 2,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/71be4f43c0554bac851b5e566dabd754"
+    },
+    
+    {
+        label: "Dapper ORM",
+        quadrant: 2,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/716b31033bb14be3aafe16358904b895"
+    },
+    
+    {
+        label: "NetArchTest",
+        quadrant: 2,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/1bc61d2a86ea487696d5c58168fb55e3"
+    },
+    
+    {
+        label: "ArchUnitNET",
+        quadrant: 2,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/a3fd060090d8407cb80dd49e0802d542"
+    },
+    
+    {
+        label: "Hangfire",
+        quadrant: 2,
+        ring: 1,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/6365c462f1b64cdb9b368b4b16bf237f"
+    },
+    
+    {
+        label: "YARP",
+        quadrant: 2,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/fed07aef67e14eb2a6ff9126d8180dfd"
+    },
+    
+    {
+        label: "Ocelot",
+        quadrant: 2,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/0654f0bed2a44cf7adcab3d6ba3b6c04"
+    },
+    
+    {
+        label: "SignalR",
+        quadrant: 2,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/995a26c0334f47e28c0dbe0cde31fd93"
+    },
+    
+    {
+        label: "CsvHelper",
+        quadrant: 2,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/2ef1d378be7340ce86c7314929c1667a"
+    },
+    
+    {
+        label: "Swagger",
+        quadrant: 2,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/a86421111f1e4f9c95cc65734d9a9bf8"
+    },
+    
+    {
+        label: "Audit.NET",
+        quadrant: 2,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/05a3568c1ea3457a88143bb06660190e"
+    },
+    
+    {
+        label: "Docker",
+        quadrant: 3,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/380d3eba9816485db9a12253de53622f"
+    },
+    
+    {
+        label: "Devcontainers",
+        quadrant: 3,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/0be7dc1b8c954e2485e696a232db9737"
+    },
+    
+    {
+        label: "Dotnet format",
+        quadrant: 3,
+        ring: 1,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/8c0662e82e154f7eb9b3471cc7b0ae81"
+    },
+    
+    {
+        label: "Linqpad",
+        quadrant: 3,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/971410c68a404a0dba73eb292943559c"
+    },
+    
+    {
+        label: "Postman",
+        quadrant: 3,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/521822ad2b0d45468832f2bb408dca5c"
+    },
+    
+    {
+        label: "CleanGen",
+        quadrant: 3,
+        ring: 1,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/73ae4bc330ab4c489a94d9bbc6a4f9d6"
+    },
+    
+    {
+        label: "Husky.NET",
+        quadrant: 3,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/8587593995c8432b95ae626c4dec60c6"
+    },
+    
+    {
+        label: "ChatGPT",
+        quadrant: 3,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/60bf4b27e68b4bb6b83cfaeccad82fe6"
+    },
+    
+    {
+        label: "GitHub Copilot",
+        quadrant: 3,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/f4123599d8b441489e93614109add158"
+    },
+    
+    {
+        label: "WSL",
+        quadrant: 3,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/120274388f9840a98ecc930b3da6b541"
+    },
+    
+    {
+        label: "MiniProfiler",
+        quadrant: 3,
+        ring: 1,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/5baf2943f0434d1ab5e056bb49a0c693"
+    },
+    
+    {
+        label: "Bicep",
+        quadrant: 0,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/74a983457cde49baba61ef3b5aaa258e"
+    },
+    
+    {
+        label: "Kubernetes",
+        quadrant: 0,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/496dccd952b64ef1823b4c8d4e8aafc3"
+    },
+    
+    {
+        label: "AWS Lambda",
+        quadrant: 0,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/f8187ca363b04c38bbb6d731d509a3ae"
+    },
+    
+    {
+        label: "Az Functions",
+        quadrant: 0,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/ae1f4cb0fe854460868261952d12364a"
+    },
+    
+    {
+        label: "Fission",
+        quadrant: 0,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/1c194794d2124431bcd30960af0fae04"
+    },
+    
+    {
+        label: "Az App Insights",
+        quadrant: 0,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/ca649f99ee384226ac624aba25977452"
+    },
+    
+    {
+        label: "Az Pipelines",
+        quadrant: 0,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/612527841af64dbda48ae0a9b81f55db"
+    },
+    
+    {
+        label: "Az Container Registry",
+        quadrant: 0,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/7e5e441898ed4f6e916551e4c9a4e751"
+    },
+    
+    {
+        label: "Az App Service",
+        quadrant: 0,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/f38df619d9f441498db05f074c8dfe6a"
+    },
+    
+    {
+        label: "Terraform (CDK)",
+        quadrant: 0,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/5205a9b4a0184cbcae545819bfbfcba9"
+    },
+    
+    {
+        label: "Pulumi",
+        quadrant: 0,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/6ca8c80e2e5640999ec29a046f639b74"
+    },
+    
+    {
+        label: "Stellar Blockchain",
+        quadrant: 0,
+        ring: 1,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/ba8b389d59ac408b96ba6c4d6a9c573e"
+    },
+    
+    {
+        label: "Az Entra ID",
+        quadrant: 0,
+        ring: 1,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/31018b519da6430da94c158b8a427e99"
+    },
+    
+    {
+        label: "Az AD B2C",
+        quadrant: 0,
+        ring: 1,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/95bcb4db26f644c9b05ce9f0eac5c849"
+    },
+    
+    {
+        label: "Az KeyVault",
+        quadrant: 0,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/afbd3e8065e74ffba7a7e88d9a0f25b2"
+    },
+    
+    {
+        label: "SQL Server",
+        quadrant: 1,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/269d02a3301a42fbbe5603881d695c2b"
+    },
+    
+    {
+        label: "Az Storage",
+        quadrant: 1,
+        ring: 0,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/1c6cfeddd3a04fd89c18bf65f2cc6ee9"
+    },
+    
+    {
+        label: "Minio",
+        quadrant: 1,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/fe24df7d524c4b87abdb0a3253aeac59"
+    },
+    
+    {
+        label: "DynamoDB",
+        quadrant: 1,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/e0ecbe8ecdcc4ef4aecde8f90260d4b7"
+    },
+    
+    {
+        label: "CosmosDB",
+        quadrant: 1,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/e3e92eb6bd33427ea2d7bcba61345c39"
+    },
+    
+    {
+        label: "Redis",
+        quadrant: 1,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/fb1def16b0bd42a88a600870b6800a73"
+    },
+    
+    {
+        label: "DragonflyDB",
+        quadrant: 1,
+        ring: 2,
+        moved: 0,
+        link: "https://www.notion.so/clearskylogic/f51f2909a8dc4291a047bb27a83b3fed"
+    },
+    
+  ]
+});
+</script>
+
+<table>
+  <tr>
+  <td>
+  
+  <h3>What is the Tech Radar?</h3>
+  
+  <p>
+  The Zalando Tech Radar is a list of technologies, complemented by an assessment result, called <em>ring assignment</em>. We use four rings with the following semantics:
+  </p>
+  
+  <ul>
+  <li><strong>ADOPT</strong> &mdash; Technologies we have high confidence in to serve our purpose, also in large scale. Technologies with a usage culture in our Zalando production environment, low risk and recommended to be widely used.</li>
+  <li><strong>TRIAL</strong> &mdash; Technologies that we have seen work with success in project work to solve a real problem; first serious usage experience that confirm benefits and can uncover limitations. TRIAL technologies are slightly more risky; some engineers in our organization walked this path and will share knowledge and experiences.</li>
+  <li><strong>ASSESS</strong> &mdash; Technologies that are promising and have clear potential value-add for us; technologies worth to invest some research and prototyping efforts in to see if it has impact. ASSESS technologies have higher risks; they are often brand new and highly unproven in our organisation. You will find some engineers that have knowledge in the technology and promote it, you may even find teams that have started a prototyping effort.</li>
+  <li><strong>HOLD</strong> &mdash; Technologies not recommended to be used for new projects. Technologies that we think are not (yet) worth to (further) invest in. HOLD technologies should not be used for new projects, but usually can be continued for existing projects.</li>
+  </ul>
+  
+  </td><td>
+  
+  <h3>What is the purpose?</h3>
+  
+  <p>
+  The Tech Radar is a tool to inspire and support Engineering teams at Zalando to pick the best technologies for new projects; it provides a platform to share knowledge and experience in technologies, to reflect on technology decisions and continuously evolve our technology landscape. Based on the <a href="https://www.thoughtworks.com/radar">pioneering work of ThoughtWorks</a>, our Tech Radar sets out the changes in technologies that are interesting in software development &mdash; changes that we think our engineering teams should pay attention to and use in their projects.
+  </p>
+  
+  <h3>How do we maintain it?</h3>
+  
+  <p>
+  The Tech Radar is maintained by our <em>Principal Engineers</em> &mdash; who facilitate and drive the technology selection discussions at Zalando across the Engineering Community. Assignment of technologies to rings is the outcome of ring change proposals, which are discussed and voted on. The Tech Radar is open for contribution for all Engineering teams at Zalando and depends on their active participation to share lessons learned, pitfalls, and contribute to good practices on using the technologies.<br/>
+  </p>
+  
+  <p>
+  Check out our <a href="https://engineering.zalando.com/tags/tech-radar.html">Engineering Blog</a> for more information on how we approach Technology Selection and use the Tech Radar at Zalando.
+  </p>
+  
+  <p>
+  <em>BTW, if you would like to create your own Tech Radar &mdash; we have <a href="https://github.com/zalando/tech-radar">open sourced the code</a> to generate this visualization.</em>
+  </p>
+  
+  </td></tr>
+  </table>
+
+</body>
+</html>
